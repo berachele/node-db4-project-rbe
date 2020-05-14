@@ -1,11 +1,11 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('ingredients').del()
+  return knex('ingredients').truncate()
     .then(function () {
       // Inserts seed entries
       return knex('ingredients').insert([
-        {quantity: 6-8, measurement: '', ingredient: "Boneless Chicken breasts"},
+        {quantity: 6, measurement: '', ingredient: "Boneless Chicken breasts"},
         {quantity: 1/2, measurement: 'cup', ingredient: "water"},
         {quantity: 2, measurement: 'envelopes', ingredient: "Lipton Onion Soup"},
         {quantity: 1, measurement: 'bottle', ingredient: "French Salad Dressing"},
