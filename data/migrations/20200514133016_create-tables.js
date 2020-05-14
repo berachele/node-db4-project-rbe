@@ -21,7 +21,7 @@ exports.up = function(knex) {
   .createTable("ingredients", ing => {
       ing.increments()
       ing.varchar("quantity").notNullable()
-      ing.string("measurement").notNullable()
+      ing.string("measurement")
       ing.string("ingredient").notNullable()
   })
 
