@@ -13,6 +13,8 @@ exports.up = function(knex) {
       steps.integer("recipeID").unsigned().notNullable()
       .references("id")
       .inTable("recipes")
+      .onUpdate('CASCADE') 
+      .onDelete('RESTRICT')
 
       steps.string("step").notNullable()
       steps.integer("stepID").notNullable()
@@ -31,10 +33,14 @@ exports.up = function(knex) {
       recIng.integer("recipeID").unsigned().notNullable()
       .references("id")
       .inTable("recipes")
+      .onUpdate('CASCADE') 
+      .onDelete('RESTRICT')
       
       recIng.integer("ingredientID").unsigned().notNullable()
       .references("id")
       .inTable("ingredients")
+      .onUpdate('CASCADE') 
+      .onDelete('RESTRICT')
   })
 };
 
